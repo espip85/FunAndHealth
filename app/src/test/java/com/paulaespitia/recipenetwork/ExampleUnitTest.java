@@ -1,4 +1,4 @@
-package com.example.paulaespitia.funandhealth;
+package com.paulaespitia.recipenetwork;
 
 import org.junit.Test;
 

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/buttonCancelCreateRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:src="@drawable/ic_cancel_black_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create my recipe"
+            android:textSize="30dp"
+            android:layout_margin="15dp"/>
+
+
+        <EditText
+        android:id="@+id/editTextRecipeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Recipe Name"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="36dp" />
+
+
+    <ImageView
+        android:id="@+id/imageViewUploadPicture"
+        android:layout_width="280dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Prepare this delicious recipe in:"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/editTextEstimatedTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Estimated Time"
+        android:inputType="textPersonName" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingredients"
+            android:layout_margin="15dp"
+            android:textSize="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*">
+
+                <TableRow>
+                    <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginLeft="10dp"
+                        android:text="Quantity"
+                        />
+
+                    <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginLeft="10dp"
+                        android:text="Units"
+                        />
+
+
+                    <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginLeft="10dp"
+                        android:text="Ingredient Name"
+                        />
+
+
+                </TableRow>
+
+                <TableRow>
+
+                    <EditText android:hint="quantity"/>
+                    <EditText android:hint="unit" />
+                    <EditText android:hint="ingredient" />
+                </TableRow>
+
+                <TableRow
+                    android:gravity="center_horizontal">
+
+                    <ImageButton
+                        android:id="@+id/buttonAddIngredient"
+                        android:src="@drawable/ic_add_circle_outline_black_24dp" />
+
+                    <ImageButton
+                        android:id="@+id/buttonRemoveIngredient"
+                        android:src="@drawable/ic_remove_circle_outline_black_24dp" />
+                </TableRow>
+            </TableLayout>
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Steps"
+            android:layout_margin="15dp"
+            android:textSize="20dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*">
+
+                <TableRow>
+
+                    <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginLeft="10dp"
+                        android:text="Step #"
+                        />
+
+                    <TextView
+
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginLeft="10dp"
+                        android:text="Step Description"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <EditText android:hint="step #" />
+                    <EditText android:hint="step" />
+                </TableRow>
+
+                <TableRow
+                 android:gravity="center_horizontal">
+
+                    <ImageButton
+                        android:id="@+id/buttonAddStep"
+                        android:src="@drawable/ic_add_circle_outline_black_24dp" />
+
+                    <ImageButton
+                        android:id="@+id/butonRemoveStep"
+                        android:src="@drawable/ic_remove_circle_outline_black_24dp" />
+                </TableRow>
+
+
+            </TableLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload"
+            android:layout_gravity="center_horizontal"
+            />
+
+    </LinearLayout>
+
+</ScrollView>
