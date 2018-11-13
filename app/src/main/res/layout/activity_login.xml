@@ -1,44 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".LoginActivity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingBottom="10dp">
 
-    <EditText
-        android:id="@+id/editTextUserName"
-        android:layout_width="356dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="User name"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="25dp" />
+        <EditText
+            android:id="@+id/loginUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/username"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="25dp" />
 
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="352dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="82dp" />
+        <EditText
+            android:id="@+id/loginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="82dp" />
 
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="258dp"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        tools:layout_editor_absoluteX="63dp"
-        tools:layout_editor_absoluteY="142dp" />
+        <Button
+            android:id="@+id/loginLogin"
+            android:layout_width="258dp"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            tools:layout_editor_absoluteX="63dp"
+            tools:layout_editor_absoluteY="142dp" />
 
-    <TextView
-        android:id="@+id/textViewRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Register Here"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="206dp" />
+        <TextView
+            android:id="@+id/loginRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            tools:layout_editor_absoluteX="163dp"
+            tools:layout_editor_absoluteY="206dp" />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

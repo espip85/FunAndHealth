@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditText
+        android:hint="@string/quantity_lower"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:hint="@string/units_lower"
+        android:inputType="text" />
+
+    <EditText
+        android:hint="@string/ingredient_lower"
+        android:inputType="text" />
+
+    <ImageView
+        android:id="@+id/editorRemoveIngredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/remove_ingredient"
+        android:src="@drawable/ic_remove_circle_outline_black_24dp"
+        android:onClick="removeIngredient"/>
+
+    <ImageView
+        android:id="@+id/editorAddIngredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/add_ingredient"
+        android:src="@drawable/ic_add_circle_outline_black_24dp"
+        android:onClick="addIngredient"/>
+
+</TableRow>

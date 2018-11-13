@@ -1,36 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingBottom="10dp">
 
     <EditText
         android:id="@+id/editTextRecipient"
-        android:layout_width="337dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="To"
+        android:hint="@string/to"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="31dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <EditText
         android:id="@+id/editTextSubject"
-        android:layout_width="335dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Subject"
+        android:hint="@string/subject"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="31dp"
         tools:layout_editor_absoluteY="85dp" />
 
     <EditText
         android:id="@+id/editTextMessage"
-        android:layout_width="335dp"
-        android:layout_height="190dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:ems="10"
-        android:hint="Message"
+        android:hint="@string/message"
         android:inputType="textMultiLine"
         tools:layout_editor_absoluteX="31dp"
         tools:layout_editor_absoluteY="160dp" />
@@ -39,7 +43,9 @@
         android:id="@+id/buttonSendMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        android:text="@string/send"
         tools:layout_editor_absoluteX="161dp"
         tools:layout_editor_absoluteY="372dp" />
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

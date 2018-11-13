@@ -1,55 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingBottom="10dp">
 
     <EditText
-        android:id="@+id/editTextUserName"
-        android:layout_width="353dp"
+        android:id="@+id/registerUsername"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="User name"
+        android:hint="@string/username"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="82dp" />
 
     <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="351dp"
+        android:id="@+id/registerEmail"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="138dp" />
-
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="353dp"
-        android:layout_height="43dp"
-        android:ems="10"
-        android:hint="Email"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="28dp" />
 
     <EditText
-        android:id="@+id/editTextVerifyPassword"
-        android:layout_width="347dp"
+        android:id="@+id/registerPassword"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Verify Password"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="138dp" />
+
+    <EditText
+        android:id="@+id/registerVerifyPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/verify_password"
         android:inputType="textPassword"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="195dp" />
 
     <Button
-        android:id="@+id/buttonRegister"
+        android:id="@+id/registerRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        android:text="@string/register"
         tools:layout_editor_absoluteX="165dp"
         tools:layout_editor_absoluteY="269dp" />
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">RecipeNetwork</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="verify_password">Verify Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="to">To</string>
+    <string name="subject">Subject</string>
+    <string name="message">Message</string>
+    <string name="send">Send</string>
+    <string name="search">Search</string>
+    <string name="recipe_name">Recipe Name</string>
+    <string name="recipe_picture">Recipe Picture</string>
+    <string name="estimated_time">Estimated Time</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="quantity">Quantity</string>
+    <string name="units">Units</string>
+    <string name="ingredient">Ingredient</string>
+    <string name="quantity_lower">quantity</string>
+    <string name="units_lower">units</string>
+    <string name="ingredient_lower">ingredient</string>
+    <string name="remove_ingredient">Remove Ingredient</string>
+    <string name="add_ingredient">Add Ingredient</string>
+    <string name="steps">Steps</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
 </resources>

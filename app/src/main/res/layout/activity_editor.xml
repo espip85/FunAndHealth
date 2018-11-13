@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EditorActivity">
+
+
+    <ImageView
+        android:id="@+id/editorCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/cancel"
+        android:src="@drawable/ic_cancel_black_24dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editorRecipeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/recipe_name"
+                android:inputType="text" />
+
+
+            <ImageView
+                android:id="@+id/editorPicture"
+                android:layout_width="280dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="20dp"
+                android:contentDescription="@string/recipe_picture" />
+
+            <EditText
+                android:id="@+id/editorEstimatedTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/estimated_time"
+                android:inputType="time" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="@string/ingredients"
+                android:textSize="20sp" />
+
+            <!-- Ingredients table -->
+
+            <TableLayout
+                android:id="@+id/editorTableIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:stretchColumns="0,1,2">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="@string/quantity"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="@string/units"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:text="@string/ingredient"
+                        android:textSize="20sp" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <EditText
+                        android:hint="@string/quantity_lower"
+                        android:inputType="numberDecimal" />
+
+                    <EditText
+                        android:hint="@string/units_lower"
+                        android:inputType="text" />
+
+                    <EditText
+                        android:hint="@string/ingredient_lower"
+                        android:inputType="text" />
+
+                    <ImageView
+                        android:id="@+id/editorRemoveIngredient"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="@string/remove_ingredient"
+                        android:onClick="removeIngredient"
+                        android:src="@drawable/ic_remove_circle_outline_black_24dp" />
+
+                    <ImageView
+                        android:id="@+id/editorAddIngredient"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="@string/add_ingredient"
+                        android:onClick="addIngredient"
+                        android:src="@drawable/ic_add_circle_outline_black_24dp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <!-- Steps table -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="@string/steps"
+                android:textSize="20sp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:stretchColumns="*">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginLeft="10dp"
+                        android:text="Step #" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_marginLeft="10dp"
+                        android:text="Description" />
+
+
+                </TableRow>
+
+                <TableRow>
+
+                    <EditText android:hint="step #" />
+
+                    <EditText android:hint="description" />
+
+                </TableRow>
+
+                <LinearLayout android:gravity="center_horizontal">
+
+                    <ImageButton
+                        android:id="@+id/addModifyAddStep"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_add_circle_outline_black_24dp" />
+
+                    <ImageButton
+                        android:id="@+id/addModifyRemoveStep"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_remove_circle_outline_black_24dp" />
+                </LinearLayout>
+
+            </TableLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/addModifyUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/save" />
+
+</RelativeLayout>
