@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableRow
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<TableRow  xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+
+    <EditText
+        android:hint="@string/step_number_lower"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:hint="@string/description_lower"
+        android:inputType="text" />
+
+    <ImageView
+        android:id="@+id/editorRemoveStep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/remove_step"
+        android:onClick="removeStep"
+        android:src="@drawable/ic_remove_circle_outline_black_24dp" />
+
+    <ImageView
+        android:id="@+id/editorAddStep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/add_step"
+        android:onClick="addStep"
+        android:src="@drawable/ic_add_circle_outline_black_24dp" />
 
 </TableRow>

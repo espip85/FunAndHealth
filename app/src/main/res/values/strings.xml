@@ -24,6 +24,23 @@
     <string name="remove_ingredient">Remove Ingredient</string>
     <string name="add_ingredient">Add Ingredient</string>
     <string name="steps">Steps</string>
+    <string name="step_number">Step #</string>
+    <string name="description">Description</string>
+    <string name="step_number_lower">step #</string>
+    <string name="description_lower">description</string>
+    <string name="remove_step">Remove Step</string>
+    <string name="add_step">Add Step</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="search_user">Search User</string>
+    <string name="search_recipe">Search Recipe</string>
+    <string name="favorite_users">Favorite Users</string>
+    <string name="recipes">Recipes</string>
+    <string name="remove">Remove</string>
+    <string name="favorite_recipes">Favorite Recipes</string>
+    <string name="my_profile">My profile</string>
+    <string name="date">Date</string>
+    <string name="from">From</string>
+    <string name="reply">Reply</string>
+    <string name="created_by">Created by </string>
 </resources>

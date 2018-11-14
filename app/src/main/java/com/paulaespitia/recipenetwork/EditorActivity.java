@@ -9,15 +9,19 @@ import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
+import com.mysql.cj.xdevapi.Table;
+
 public class EditorActivity extends Activity {
 
     private TableLayout ingredientsTableLayout;
+    private TableLayout stepsTableLayout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
         ingredientsTableLayout = (TableLayout) findViewById(R.id.editorTableIngredients);
+        stepsTableLayout = (TableLayout) findViewById(R.id.editorTableSteps);
     }
 
     public void addIngredient(View v) {
@@ -37,6 +41,26 @@ public class EditorActivity extends Activity {
             quantityText.setText("");
             unitsText.setText("");
             ingredientText.setText("");
+        }
+    }
+
+    public void addStep(View v){
+
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final View rowView = inflater.inflate(R.layout.editor_steps, null);
+        stepsTableLayout.addView(rowView, stepsTableLayout.indexOfChild((View) v.getParent()) + 1);
+    }
+
+    public void removeStep (View v){
+
+        if (stepsTableLayout.getChildCount() > 2){
+            stepsTableLayout.removeView( (View) v.getParent());
+        } else {
+            TableRow tableRow = (TableRow) stepsTableLayout.getChildAt(1);
+            EditText stepNumber = (EditText) tableRow.getChildAt(0);
+            EditText stepDescription = (EditText) tableRow.getChildAt(1);
+            stepNumber.setText("");
+            stepDescription.setText("");
         }
     }
 }

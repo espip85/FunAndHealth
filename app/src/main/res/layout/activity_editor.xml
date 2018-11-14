@@ -125,7 +125,6 @@
 
             </TableLayout>
 
-            <!-- Steps table -->
 
             <TextView
                 android:layout_width="match_parent"
@@ -134,54 +133,63 @@
                 android:text="@string/steps"
                 android:textSize="20sp" />
 
+
+            <!-- Steps table -->
+
             <TableLayout
+                android:id="@+id/editorTableSteps"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="15dp"
-                android:stretchColumns="*">
+                android:stretchColumns="0,1">
 
                 <TableRow>
 
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_column="0"
-                        android:layout_marginLeft="10dp"
-                        android:text="Step #" />
+                        android:text="@string/step_number"
+                        android:textSize="20sp" />
 
                     <TextView
                         android:layout_height="wrap_content"
                         android:layout_column="0"
-                        android:layout_marginLeft="10dp"
-                        android:text="Description" />
-
+                        android:text="@string/description"
+                        android:textSize="20sp" />
 
                 </TableRow>
 
                 <TableRow>
 
-                    <EditText android:hint="step #" />
+                    <EditText
+                        android:hint="@string/step_number_lower"
+                        android:inputType="numberDecimal" />
 
-                    <EditText android:hint="description" />
+                    <EditText
+                        android:hint="@string/description_lower"
+                        android:inputType="text" />
 
-                </TableRow>
-
-                <LinearLayout android:gravity="center_horizontal">
-
-                    <ImageButton
-                        android:id="@+id/addModifyAddStep"
+                    <ImageView
+                        android:id="@+id/editorRemoveStep"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="@string/remove_step"
+                        android:onClick="removeStep"
+                        android:src="@drawable/ic_remove_circle_outline_black_24dp" />
+
+                    <ImageView
+                        android:id="@+id/editorAddStep"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="@string/add_step"
+                        android:onClick="addStep"
                         android:src="@drawable/ic_add_circle_outline_black_24dp" />
 
-                    <ImageButton
-                        android:id="@+id/addModifyRemoveStep"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_remove_circle_outline_black_24dp" />
-                </LinearLayout>
+                </TableRow>
 
             </TableLayout>
-
         </LinearLayout>
 
     </ScrollView>
