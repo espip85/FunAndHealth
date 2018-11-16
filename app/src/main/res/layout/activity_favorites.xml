@@ -6,24 +6,21 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/favoritesSearchUser"
+        android:id="@+id/favoritesSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/search_user"
-        android:drawableLeft="@drawable/ic_person_black_24dp"
-        android:layout_margin="10dp"
-        />
-
-    <EditText
-        android:id="@+id/favoritesSearchRecipe"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/search_recipe"
+        android:hint="@string/search"
         android:drawableLeft="@drawable/ic_search_black_24dp"
         android:layout_margin="10dp"
         />
 
+    <de.halfbit.pinnedsection.PinnedSectionListView
+        android:id="@+id/favoritesList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+    </de.halfbit.pinnedsection.PinnedSectionListView>
+<!--
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -32,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!--Table favorite users-->
+            Table favorite users
 
             <TableLayout
                 android:id="@+id/favoritesTableFavoriteUsers"
@@ -63,8 +60,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:contentDescription="@string/remove_ingredient"
-                        android:onClick="removeIngredient"
+                        android:contentDescription="@string/remove_user"
+                        android:onClick="removeUser"
                         android:src="@drawable/ic_remove_circle_outline_black_24dp" />
 
                 </TableRow>
@@ -87,7 +84,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--Table favorite recipes-->
+            Table favorite recipes
 
 
             <TableLayout
@@ -145,6 +142,6 @@
         android:textAllCaps="false"
         android:layout_gravity="center_horizontal"/>
 
-
+-->
 
 </LinearLayout>

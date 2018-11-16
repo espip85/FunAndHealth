@@ -28,6 +28,7 @@ public class LoginActivity extends Activity {
             public void onClick(View v) {
                 try {
                     Connection connection = SQLHelper.getHelper().getConnection();
+                    // I realize this is an incredible bad way of implementing this but it's here for simplicities sake.
                     PreparedStatement preparedStatement = connection.prepareStatement("SELECT EXISTS(SELECT 1 FROM Users WHERE username=? AND password=?)");
                     preparedStatement.setString(1, username.getText().toString());
                     preparedStatement.setString(2, password.getText().toString());

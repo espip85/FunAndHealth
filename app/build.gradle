@@ -28,4 +28,5 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:25.2.0'
     implementation 'com.android.support:design:25.0.0'
     implementation 'mysql:mysql-connector-java:8.0.13'
+    compile "de.halfbit:pinned-section-listview:1.0.0"
 }
