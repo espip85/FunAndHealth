@@ -136,7 +136,7 @@
                 <Button
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:text="<"
+                    android:text="left"
                     android:layout_marginRight="20dp"
                     android:id="@+id/viewUserPreviousRecipe"/>
 
@@ -144,7 +144,7 @@
                 <Button
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:text=">"
+                    android:text="right"
                     android:layout_marginLeft="20dp"
                     android:id="@+id/viewUserNextRecipe"/>
 
