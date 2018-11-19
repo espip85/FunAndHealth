@@ -21,7 +21,7 @@ public class ListUsersActivity extends Activity {
         final ImageView userPicture = findViewById(R.id.listUsersPicture);
         final TextView username = findViewById(R.id.listUsersUsername);
         final EditText search = findViewById(R.id.listUsersSearch);
-        
+
         search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {

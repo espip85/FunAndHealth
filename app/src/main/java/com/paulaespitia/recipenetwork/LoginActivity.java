@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -34,16 +35,15 @@ public class LoginActivity extends Activity {
                     preparedStatement.setString(2, password.getText().toString());
                     ResultSet resultSet = preparedStatement.executeQuery();
                     if (resultSet.next()) {
-                        if (resultSet.getBoolean(1)) {
+                        if (resultSet.getInt(1) == 1) {
                             username.setText("Valid!");
                         } else {
                             username.setText("Invalid!");
                         }
                     }
                     connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                } catch (ClassNotFoundException e) {
+                } catch (SQLException | ClassNotFoundException e) {
+                    Toast.makeText(getApplicationContext(), "An error occurred", Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
             }
