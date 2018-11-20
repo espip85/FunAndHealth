@@ -9,6 +9,16 @@
     android:paddingBottom="10dp">
 
     <EditText
+        android:id="@+id/messageWindowSender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/from"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
         android:id="@+id/messageWindowRecipient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

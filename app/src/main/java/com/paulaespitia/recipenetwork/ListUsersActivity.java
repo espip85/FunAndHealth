@@ -6,6 +6,7 @@ import android.view.KeyEvent;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -25,9 +26,8 @@ public class ListUsersActivity extends Activity {
         search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                try {
-                    Connection connection = SQLHelper.getHelper().getConnection();
-                    PreparedStatement preparedStatement =  connection.prepareStatement("SELECT * FROM Users WHERE username =?" );
+                try (Connection connection = SQLHelper.getHelper().getConnection()) {
+                    PreparedStatement preparedStatement =  connection.prepareStatement("SELECT 1 FROM Users WHERE username =?" );
                     preparedStatement.setString(1, v.getText().toString());
                     ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -35,7 +35,7 @@ public class ListUsersActivity extends Activity {
                         if (resultSet.getBoolean(1)) {
                             username.setText("Valid search!");
                         } else {
-                            username.setText("Invalid Search!");
+                            Toast.makeText(getApplicationContext(),"Invalid user search!", Toast.LENGTH_LONG).show();
                         }
                     }
 
@@ -44,11 +44,8 @@ public class ListUsersActivity extends Activity {
                         displayUser.setUsername(resultSet.getString("username"));
                         displayUser.setPicture(resultSet.getString("picture")); // ????? picture path
                     }
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
+                } catch (ClassNotFoundException | SQLException e) {
+                    Toast.makeText(getApplicationContext(), "An error occurred", Toast.LENGTH_SHORT).show();
                 }
                 return false;
             }

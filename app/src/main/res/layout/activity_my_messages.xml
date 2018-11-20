@@ -14,7 +14,7 @@
         android:layout_margin="10dp" />
 
     <TableLayout
-        android:id="@+id/myMessagesTable"
+        android:id="@+id/myMessagesTableLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -23,6 +23,7 @@
     <TableRow>
 
     <TextView
+        android:id="@+id/myMessagesSubject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/subject"
@@ -30,6 +31,7 @@
         android:layout_margin="15dp"/>
 
     <TextView
+        android:id="@+id/myMessagesDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/date"

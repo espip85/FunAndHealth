@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/myMessagesSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/subject"
+        android:drawableLeft="@drawable/ic_mail_black_24dp"
+        android:layout_margin="15dp"/>
+
+    <TextView
+        android:id="@+id/myMessagesDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/date"
+        android:drawableLeft="@drawable/ic_date_range_black_24dp"
+        android:layout_margin="15dp"/>
+
+</TableRow>
