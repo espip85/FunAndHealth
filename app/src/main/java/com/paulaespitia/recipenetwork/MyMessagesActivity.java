@@ -39,7 +39,7 @@ public class MyMessagesActivity extends Activity{
 
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 try (Connection connection = SQLHelper.getHelper().getConnection()) {
-                    PreparedStatement preparedStatement = connection.prepareStatement("SELECT subject FROM Messages WHERE subject LIKE =?");
+                    PreparedStatement preparedStatement = connection.prepareStatement("SELECT subject FROM Messages WHERE subject LIKE =?"); //?? include porcentage signs
                     preparedStatement.setString(1, v.getText().toString());
                     ResultSet resultSet = preparedStatement.executeQuery();
                     ArrayList<Message> messages = new ArrayList<>();
@@ -72,7 +72,6 @@ public class MyMessagesActivity extends Activity{
 
 }
 
-    //??Can i put this method here??
 
     public void addRowForDisplayingFoundMessage (View v, Message message) {
         //Create a new table row

@@ -31,8 +31,7 @@ public class MessageWindowActivity extends Activity {
 
             @Override
             public void onClick(View v) {
-                try {
-                    Connection connection = SQLHelper.getHelper().getConnection();
+                try  (Connection connection = SQLHelper.getHelper().getConnection()) {
                     //VERIFY IF RECIPIENT EXISTS!
                     PreparedStatement preparedStatement = connection.prepareStatement("SELECT 1 FROM Users WHERE username =?");
                     preparedStatement.setString(1, recipient.getText().toString());
@@ -43,7 +42,7 @@ public class MessageWindowActivity extends Activity {
                                 preparedStatement = connection.prepareStatement("INSERT INTO Messages(sender,receiver, subject, message) VALUES (?,?,?,?)");
                                 //???? sender and receiver are as int in the db
 
-                                preparedStatement.setString(1, sender.getText().toString()); // i create the sender in the layou, how to read the user of the account in use??
+                                preparedStatement.setString(1, sender.getText().toString()); // i create the sender in the layout, how to read the user of the account in use??
                                 preparedStatement.setString(2, recipient.getText().toString());
                                 preparedStatement.setString(3, subject.getText().toString());
                                 preparedStatement.setString(4, message.getText().toString());

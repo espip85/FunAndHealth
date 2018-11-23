@@ -32,17 +32,19 @@
     <string name="add_step">Add Step</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="users">Users</string>
+    <string name="recipes">Recipes</string>
     <string name="search_user">Search User</string>
     <string name="search_recipe">Search Recipe</string>
+    <string name="remove_recipe">Remove Recipe</string>
     <string name="favorite_users">Favorite Users</string>
     <string name="remove_user">Remove User</string>
-    <string name="recipes">Recipes</string>
     <string name="remove">Remove</string>
     <string name="favorite_recipes">Favorite Recipes</string>
     <string name="my_profile">My profile</string>
     <string name="date">Date</string>
     <string name="from">From</string>
     <string name="reply">Reply</string>
-    <string name="created_by">Created by </string>
+    <string name="created_by">Created by</string>
 
 </resources>
