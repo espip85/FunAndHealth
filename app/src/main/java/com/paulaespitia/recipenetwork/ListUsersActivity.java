@@ -42,16 +42,16 @@ public class ListUsersActivity extends Activity {
                     while (resultSet.next()) {
                         if (search.getText().toString().equalsIgnoreCase(resultSet.getString("username"))) {
                             search.setText("Valid search!");
-                            User displayUser = new User();
-                            displayUser.setUsername(resultSet.getString("username"));
-                            displayUser.setPicture(resultSet.getString("picture")); // ????? picture path
-                            users.add(displayUser); //????? ADD TO LIST VIEW
+                            //User displayUser = new User();
+                            //displayUser.setUsername(resultSet.getString("username"));
+                            //displayUser.setPicture(resultSet.getString("picture")); // ????? picture path
+                            //users.add(displayUser); //????? ADD TO LIST VIEW
                         } else {
                             Toast.makeText(getApplicationContext(),"Invalid user search!", Toast.LENGTH_LONG).show();
                         }
                     }
 
-                } catch (ClassNotFoundException | SQLException e) {
+                } catch (SQLException e) {
                     Toast.makeText(getApplicationContext(), "An error occurred", Toast.LENGTH_SHORT).show();
                 }
                 return false;

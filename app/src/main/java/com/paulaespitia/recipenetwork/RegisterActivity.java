@@ -19,46 +19,72 @@ public class RegisterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        final EditText username = findViewById(R.id.registerUsername);
-        final EditText email = findViewById(R.id.registerEmail);
-        final EditText password = findViewById(R.id.registerPassword);
-        final EditText verifyPassword = findViewById(R.id.registerVerifyPassword);
-        final Button register = findViewById(R.id.registerRegister);
-        register.setOnClickListener(new View.OnClickListener() {
+        final EditText usernameEditText = findViewById(R.id.registerUsername);
+        final EditText emailEditText = findViewById(R.id.registerEmail);
+        final EditText passwordEditText = findViewById(R.id.registerPassword);
+        final EditText verifyPasswordEditText = findViewById(R.id.registerVerifyPassword);
+        final Button registerButton = findViewById(R.id.registerRegister);
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!email.getText().toString().matches("([\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4})")) {
+                if (!emailEditText.getText().toString().matches("([\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4})")) {
                     Toast.makeText(getApplicationContext(), "Invalid Email", Toast.LENGTH_SHORT).show();
-                } else if (!password.equals(verifyPassword)) {
+                } else if (!passwordEditText.getText().toString().equals(verifyPasswordEditText.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_SHORT).show();
-                    password.setText("");
-                    verifyPassword.setText("");
+                    passwordEditText.setText("");
+                    verifyPasswordEditText.setText("");
                 } else {
-                    try (Connection connection = SQLHelper.getHelper().getConnection()) {
-                        // VERIFY USER OR EMAIL DOESNT EXIST ALREADY
-                        PreparedStatement preparedStatement = connection.prepareStatement("SELECT username,email FROM Users WHERE username=? OR email=?");
-                        preparedStatement.setString(1, username.getText().toString());
-                        preparedStatement.setString(2, email.getText().toString());
-                        ResultSet resultSet = preparedStatement.executeQuery();
-                        if (resultSet.next()) {
-                            if (username.getText().toString().equalsIgnoreCase(resultSet.getString("username"))) {
-                                Toast.makeText(getApplicationContext(), "Username is already in use", Toast.LENGTH_SHORT).show();
-                            }
-                            if (email.getText().toString().equalsIgnoreCase(resultSet.getString("email"))) {
-                                Toast.makeText(getApplicationContext(), "Email is already in use", Toast.LENGTH_SHORT).show();
-                            }
-                        } else {
-                            preparedStatement = connection.prepareStatement("INSERT INTO Users(username,password,email) VALUES (?,?,?)");
-                            preparedStatement.setString(1, username.getText().toString());
-                            preparedStatement.setString(2, password.getText().toString());
-                            preparedStatement.setString(3, email.getText().toString());
-                            preparedStatement.execute();
-                        }
-                    } catch (ClassNotFoundException | SQLException e) {
-                        Toast.makeText(getApplicationContext(), "An error occurred", Toast.LENGTH_SHORT).show();
-                    }
+                    RegisterTask registerTask = new RegisterTask(RegisterActivity.this);
+                    registerTask.execute(usernameEditText.getText().toString(), passwordEditText.getText().toString(), emailEditText.getText().toString());
                 }
             }
         });
+    }
+
+    private static class RegisterTask extends SQLAsyncTask<String, Void> {
+
+        boolean usernameInUse = false;
+        boolean emailInUse = false;
+
+        private RegisterTask(Activity activity) {
+            super(activity);
+        }
+
+        @Override
+        protected Void sqlBackground(Connection connection, String... strings) throws SQLException {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT username,email FROM Users WHERE username=? OR email=?");
+            preparedStatement.setString(1, strings[0]); // username
+            preparedStatement.setString(2, strings[2]); // email
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                if (strings[0].equalsIgnoreCase(resultSet.getString("username"))) {
+                    usernameInUse = true;
+                }
+                if (strings[1].equalsIgnoreCase(resultSet.getString("email"))) {
+                    emailInUse = true;
+                }
+            }
+            if (!usernameInUse && !emailInUse) {
+                preparedStatement = connection.prepareStatement("INSERT INTO Users(username,password,email) VALUES (?,?,?)");
+                preparedStatement.setString(1, strings[0]); // username
+                preparedStatement.setString(2, strings[1]); // password
+                preparedStatement.setString(3, strings[2]); // email
+                preparedStatement.executeUpdate();
+            }
+            return null;
+        }
+
+        @Override
+        protected void sqlPostExecute(Activity activity, Void aVoid) {
+            if (usernameInUse && emailInUse) {
+                Toast.makeText(activity.getApplicationContext(), "Username and Email in use", Toast.LENGTH_SHORT).show();
+            } else if (usernameInUse) {
+                Toast.makeText(activity.getApplicationContext(), "Username in use", Toast.LENGTH_SHORT).show();
+            } else if (emailInUse) {
+                Toast.makeText(activity.getApplicationContext(), "Email in use", Toast.LENGTH_SHORT).show();
+            } else {
+                activity.finish();
+            }
+        }
     }
 }

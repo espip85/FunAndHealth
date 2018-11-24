@@ -1,197 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity"
-    android:orientation="vertical">
-
-
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:src="@drawable/recipe_network_logo"
-            />
-
-        <EditText
-            android:id="@+id/homeSearch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/search"
-            android:drawableLeft="@drawable/ic_search_black_24dp"
-            android:layout_margin="10dp"
-            />
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+    <!--
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/recipe_network_logo"
+                />
+    -->
+    <EditText
+        android:id="@+id/homeSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:drawableStart="@drawable/ic_search_black_24dp"
+        android:inputType="text"
+        android:hint="@string/search" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/homeHighestRatedList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Most popular"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:padding="10dp"
-                />
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                    android:text="Recipe Name"
-                    android:textSize="12dp"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-
-                    <ImageView
-                        android:id="@+id/imageMostPopulatImgRecipe1"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
-                        android:layout_margin="10dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Recipe Description"
-                        android:textSize="12dp"
-                        android:layout_margin="10dp"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_horizontal">
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:text="Add to Favorites"
-                        android:textAllCaps="false"
-                        android:textSize="8dp"
-                        android:id="@+id/homeAddFavoriteMostPopular"/>
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:text="Follow user"
-                        android:textAllCaps="false"
-                        android:textSize="8dp"
-                        android:id="@+id/homeFollowUserMostPopular"/>
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Highest Rated"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:padding="10dp"
-                />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Recipe Name"
-                    android:textSize="12dp"/>
+                    android:padding="10dp"
+                    android:text="@string/highest_rated"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:onClick="viewSortedByHighestRated"/>
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/homeMostPopularList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-
-                <ImageView
-                    android:id="@+id/imageHighestRateImgRecipe1"
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="10dp" />
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Recipe Description"
-                    android:textSize="12dp"
-                    android:layout_margin="10dp"/>
+                    android:padding="10dp"
+                    android:text="@string/most_popular"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:onClick="viewSortedByMostPopular"/>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_horizontal">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:text="Add to Favorites"
-                    android:textAllCaps="false"
-                    android:textSize="8dp"
-                    android:id="@+id/homeAddFavoriteHighestRated"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:text="Follow user"
-                    android:textAllCaps="false"
-                    android:textSize="8dp"
-                    android:id="@+id/homeFollowUserHighestRated"/>
-            </LinearLayout>
-
 
         </LinearLayout>
-
-    </LinearLayout>
 
     </ScrollView>
 
 </LinearLayout>
-
-
-
-
-

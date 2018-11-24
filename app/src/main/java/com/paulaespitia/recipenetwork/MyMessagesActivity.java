@@ -60,7 +60,7 @@ public class MyMessagesActivity extends Activity{
                     }
 
 
-                } catch (ClassNotFoundException | SQLException e) {
+                } catch (SQLException e) {
                     Toast.makeText(getApplicationContext(), "An error occurred", Toast.LENGTH_SHORT).show();
                 }
                 return false;

@@ -2,36 +2,15 @@ package com.paulaespitia.recipenetwork;
 
 public class Recipe {
 
-    private String name;
-    private String estimatedTime;
-    private String picture;
+    public final String name;
+    public final String author;
+    public final String description;
+    public final Double estimatedTime;
 
-    public Recipe() {
-
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public Recipe(String name, String author, String description, Double estimatedTime) {
         this.name = name;
-    }
-
-    public String getEstimatedTime() {
-        return estimatedTime;
-    }
-
-    public void setEstimatedTime(String estimatedTime) {
+        this.author = author;
+        this.description = description;
         this.estimatedTime = estimatedTime;
     }
-
-    public String getPicture() {
-        return picture;
-    }
-
-    public void setPicture(String picture) {
-        this.picture = picture;
-    }
-
 }

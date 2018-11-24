@@ -4,6 +4,7 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="verify_password">Verify Password</string>
+    <string name="invalid_username_or_password">Invalid Username or Password</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="to">To</string>
@@ -13,6 +14,7 @@
     <string name="search">Search</string>
     <string name="recipe_name">Recipe Name</string>
     <string name="recipe_picture">Recipe Picture</string>
+    <string name="recipe_description">Recipe Description</string>
     <string name="estimated_time">Estimated Time</string>
     <string name="ingredients">Ingredients</string>
     <string name="quantity">Quantity</string>
@@ -46,5 +48,6 @@
     <string name="from">From</string>
     <string name="reply">Reply</string>
     <string name="created_by">Created by</string>
-
+    <string name="highest_rated">Highest Rated</string>
+    <string name="most_popular">Most Popular</string>
 </resources>

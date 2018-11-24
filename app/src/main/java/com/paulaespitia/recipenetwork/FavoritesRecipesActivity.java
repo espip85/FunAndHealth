@@ -50,8 +50,6 @@ public class FavoritesRecipesActivity extends Activity {
             preparedStatement.setInt(1, User.currentUser.userId);
             preparedStatement.setInt(2, idRecipes);
             preparedStatement.executeUpdate();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -66,8 +64,6 @@ public class FavoritesRecipesActivity extends Activity {
             while (resultSet.next()) {
                 favorites.add(new RecipeID(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3)));
             }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }

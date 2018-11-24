@@ -9,8 +9,6 @@ import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
-import com.mysql.cj.xdevapi.Table;
-
 public class EditorActivity extends Activity {
 
     private TableLayout ingredientsTableLayout;

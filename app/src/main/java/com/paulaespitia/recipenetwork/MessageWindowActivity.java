@@ -7,8 +7,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.mysql.cj.protocol.Resultset;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -52,7 +50,7 @@ public class MessageWindowActivity extends Activity {
                             }
                         }
                     }
-                } catch (ClassNotFoundException | SQLException e) {
+                } catch (SQLException e) {
                     Toast.makeText(getApplicationContext(), "An error occurred", Toast.LENGTH_SHORT).show();
                 }
 
