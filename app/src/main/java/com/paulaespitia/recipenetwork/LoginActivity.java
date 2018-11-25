@@ -41,6 +41,17 @@ public class LoginActivity extends Activity {
                 LoginActivity.this.startActivity(registerIntent);
             }
         });
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try (Connection connection = SQLHelper.getHelper().getConnection()) {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
     private static class LoginTask extends SQLAsyncTask<String, User> {

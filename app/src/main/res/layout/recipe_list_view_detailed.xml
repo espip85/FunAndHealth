@@ -37,6 +37,12 @@
                 android:text="@string/created_by" />
 
             <TextView
+                android:id="@+id/recipeListViewDetailedEstimatedTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/estimated_time"/>
+
+            <TextView
                 android:id="@+id/recipeListViewDetailedDescription"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"

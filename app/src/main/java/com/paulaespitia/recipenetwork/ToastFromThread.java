@@ -1,8 +1,6 @@
 package com.paulaespitia.recipenetwork;
 
 import android.app.Activity;
-import android.os.Handler;
-import android.os.Looper;
 import android.widget.Toast;
 
 public class ToastFromThread {

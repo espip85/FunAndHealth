@@ -1,73 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RecipeActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/recipeViewName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_margin="10dp"
+        android:hint="@string/recipe_name"
+        android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/recipeViewRecipeName"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/recipe_name"
-            android:inputType="text"
-            android:textSize="20dp"
-            android:layout_margin="10dp"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/recipeViewCreatedBy"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/created_by"
-            android:inputType="text"
-            android:textSize="20dp"
-            android:layout_margin="10dp"
-            />
+            <TextView
+                android:id="@+id/recipeViewCreatedBy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/created_by"
+                android:textSize="20sp"
+                android:onClick="viewAuthor"/>
 
+            <TextView
+                android:id="@+id/recipeViewEstimatedTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/estimated_time" />
 
-        <ImageView
-            android:id="@+id/recipeViewPicture"
-            android:layout_width="280dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="20dp"
-            android:contentDescription="@string/recipe_picture" />
+            <ImageView
+                android:id="@+id/recipeViewPicture"
+                android:layout_width="280dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="20dp"
+                android:contentDescription="@string/recipe_picture" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Favorite"
-            android:textAllCaps="false"
-            android:layout_gravity="center_horizontal"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/favorite"
+                android:textAllCaps="false" />
 
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/estimated_time"/>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/description"/>
-
-
-        </ScrollView>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/recipeViewDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/description" />
 
 
             <LinearLayout
@@ -75,10 +65,10 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/ingredients"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ingredients" />
 
                 <TableLayout
                     android:layout_width="match_parent"
@@ -87,27 +77,21 @@
 
                     <TableRow>
 
-                        <TextView
-                            android:text="@string/quantity"/>
+                        <TextView android:text="@string/quantity" />
 
-                        <TextView
-                            android:text="@string/units"/>
+                        <TextView android:text="@string/units" />
 
-                        <TextView
-                            android:text="@string/ingredient"/>
+                        <TextView android:text="@string/ingredient" />
 
                     </TableRow>
 
                     <TableRow>
 
-                        <TextView
-                            android:text="@string/quantity_lower"/>
+                        <TextView android:text="@string/quantity_lower" />
 
-                        <TextView
-                            android:text="@string/units_lower"/>
+                        <TextView android:text="@string/units_lower" />
 
-                        <TextView
-                            android:text="@string/ingredient_lower"/>
+                        <TextView android:text="@string/ingredient_lower" />
 
                     </TableRow>
 
@@ -115,7 +99,7 @@
 
             </LinearLayout>
 
-        </ScrollView>
+        </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

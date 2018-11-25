@@ -36,11 +36,11 @@ public class MyRecipesActivity extends Activity {
                     while (resultSet.next()) {
                         if (search.getText().toString().equalsIgnoreCase(resultSet.getString("name"))) {
                             search.setText("Valid search!");
-                            Recipe displayRecipe = new Recipe();
-                            displayRecipe.setName(resultSet.getString("name"));
-                            displayRecipe.setEstimatedTime(resultSet.getString("estimatedTime"));
-                            displayRecipe.setPicture(resultSet.getString("picture")); // ????? picture path
-                            recipes.add(displayRecipe); //????? ADD TO LIST VIEW
+//                            Recipe displayRecipe = new Recipe();
+//                            displayRecipe.setName(resultSet.getString("name"));
+//                            displayRecipe.setEstimatedTime(resultSet.getString("estimatedTime"));
+//                            displayRecipe.setPicture(resultSet.getString("picture")); // ????? picture path
+//                            recipes.add(displayRecipe); //????? ADD TO LIST VIEW
                         } else {
                             Toast.makeText(getApplicationContext(),"Invalid recipe search!", Toast.LENGTH_LONG).show();
                         }
