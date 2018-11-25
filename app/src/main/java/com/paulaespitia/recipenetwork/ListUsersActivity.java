@@ -8,6 +8,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.paulaespitia.recipenetwork.model.SQLHelper;
+import com.paulaespitia.recipenetwork.model.User;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

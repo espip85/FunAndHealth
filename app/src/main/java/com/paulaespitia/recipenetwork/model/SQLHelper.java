@@ -1,4 +1,4 @@
-package com.paulaespitia.recipenetwork;
+package com.paulaespitia.recipenetwork.model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

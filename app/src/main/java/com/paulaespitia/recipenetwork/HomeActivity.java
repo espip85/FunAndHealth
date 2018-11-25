@@ -1,13 +1,15 @@
 package com.paulaespitia.recipenetwork;
 
 import android.app.Activity;
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.paulaespitia.recipenetwork.model.Recipe;
+import com.paulaespitia.recipenetwork.model.RecipeDetailed;
+import com.paulaespitia.recipenetwork.model.SQLAsyncTask;
 
 import java.lang.ref.WeakReference;
 import java.sql.Connection;
@@ -65,14 +67,14 @@ public class HomeActivity extends MenuActivity {
                 String author = resultSet.getString("author");
                 String description = resultSet.getString("description");
                 Double estimatedTime = resultSet.getDouble("estimatedTime");
-                return new Recipe(recipeName, author, description, estimatedTime);
+                return new Recipe(recipeID, recipeName, author, description, estimatedTime);
             }
             return null;
         }
 
         @Override
-        protected void sqlPostExecute(Activity activity, Recipe recipe) {
-            View viewHighestRatedRecipe = weakViewHighestRatedRecipe.get();
+        protected void sqlPostExecute(final Activity activity, final Recipe recipe) {
+            final View viewHighestRatedRecipe = weakViewHighestRatedRecipe.get();
             if (recipe == null) {
                 Toast.makeText(activity.getApplicationContext(), "Unable to retrieve recipe information", Toast.LENGTH_SHORT).show();
             } else if (viewHighestRatedRecipe != null){
@@ -87,6 +89,15 @@ public class HomeActivity extends MenuActivity {
 
                 final TextView recipeListViewDetailedEstimatedTime = viewHighestRatedRecipe.findViewById(R.id.recipeListViewDetailedEstimatedTime);
                 recipeListViewDetailedEstimatedTime.setText(String.format(Locale.US, "Estimated Time: %.2f hours", recipe.estimatedTime));
+
+                viewHighestRatedRecipe.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        RecipeDetailed.recipeToView = new RecipeDetailed(recipe);
+                        Intent recipeViewIntent = new Intent(activity, RecipeActivity.class);
+                        activity.startActivity(recipeViewIntent);
+                    }
+                });
             }
         }
     }
@@ -118,13 +129,13 @@ public class HomeActivity extends MenuActivity {
                 String author = resultSet.getString("author");
                 String description = resultSet.getString("description");
                 Double estimatedTime = resultSet.getDouble("estimatedTime");
-                return new Recipe(recipeName, author, description, estimatedTime);
+                return new Recipe(recipeID, recipeName, author, description, estimatedTime);
             }
             return null;
         }
 
         @Override
-        protected void sqlPostExecute(Activity activity, Recipe recipe) {
+        protected void sqlPostExecute(final Activity activity, final Recipe recipe) {
             View viewMostPopularRecipe = weakViewMostPopularRecipe.get();
             if (recipe == null) {
                 Toast.makeText(activity.getApplicationContext(), "Unable to retrieve recipe information", Toast.LENGTH_SHORT).show();
@@ -140,6 +151,15 @@ public class HomeActivity extends MenuActivity {
 
                 final TextView recipeListViewDetailedEstimatedTime = viewMostPopularRecipe.findViewById(R.id.recipeListViewDetailedEstimatedTime);
                 recipeListViewDetailedEstimatedTime.setText(String.format(Locale.US, "Estimated Time: %.2f hours", recipe.estimatedTime));
+
+                viewMostPopularRecipe.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        RecipeDetailed.recipeToView = new RecipeDetailed(recipe);
+                        Intent recipeViewIntent = new Intent(activity, RecipeActivity.class);
+                        activity.startActivity(recipeViewIntent);
+                    }
+                });
             }
         }
     }

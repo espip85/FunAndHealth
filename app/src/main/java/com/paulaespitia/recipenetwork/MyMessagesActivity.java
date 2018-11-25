@@ -12,6 +12,9 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.paulaespitia.recipenetwork.model.Message;
+import com.paulaespitia.recipenetwork.model.SQLHelper;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

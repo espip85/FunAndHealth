@@ -9,6 +9,10 @@ import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
+import com.paulaespitia.recipenetwork.model.SQLHelper;
+import com.paulaespitia.recipenetwork.model.User;
+import com.paulaespitia.recipenetwork.model.UserID;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

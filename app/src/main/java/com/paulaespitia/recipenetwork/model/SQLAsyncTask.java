@@ -1,4 +1,4 @@
-package com.paulaespitia.recipenetwork;
+package com.paulaespitia.recipenetwork.model;
 
 import android.app.Activity;
 import android.os.AsyncTask;
@@ -14,7 +14,7 @@ public abstract class SQLAsyncTask<T, S> extends AsyncTask<T, Void, S> {
     private final WeakReference<Activity> weakActivity;
     private boolean sqlException = false;
 
-    SQLAsyncTask(Activity activity) {
+    public SQLAsyncTask(Activity activity) {
         weakActivity = new WeakReference<>(activity);
     }
 

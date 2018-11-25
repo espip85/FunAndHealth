@@ -2,11 +2,14 @@ package com.paulaespitia.recipenetwork;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public abstract class MenuActivity extends Activity {
+import com.paulaespitia.recipenetwork.model.User;
+
+public abstract class MenuActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -28,6 +31,8 @@ public abstract class MenuActivity extends Activity {
                 return true;
             case R.id.menuLogout:
                 Intent logoutIntent = new Intent(this, LoginActivity.class);
+                logoutIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                User.currentUser = null;
                 startActivity(logoutIntent);
                 return true;
             default:

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="@string/recipe_name"
+        android:text="@string/recipe_name"
         android:textSize="20sp" />
 
     <ScrollView
@@ -21,15 +21,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/recipeViewCreatedBy"
+                android:id="@+id/recipeViewAuthor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:hint="@string/created_by"
+                android:layout_marginBottom="5dp"
+                android:text="@string/created_by"
                 android:textSize="20sp"
+                android:textColor="@color/hyperlink"
+                android:clickable="true"
                 android:onClick="viewAuthor"/>
 
             <TextView
@@ -47,16 +50,19 @@
                 android:contentDescription="@string/recipe_picture" />
 
             <Button
+                android:id="@+id/recipeViewFavorite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/favorite"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:onClick="favorite"/>
 
             <TextView
                 android:id="@+id/recipeViewDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
                 android:text="@string/description" />
 
 
@@ -68,9 +74,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/ingredients" />
+                    android:paddingBottom="5dp"
+                    android:text="@string/ingredients"
+                    android:textStyle="bold"/>
 
                 <TableLayout
+                    android:id="@+id/recipeViewIngredientTable"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:stretchColumns="*">
@@ -85,21 +94,71 @@
 
                     </TableRow>
 
-                    <TableRow>
+                </TableLayout>
 
-                        <TextView android:text="@string/quantity_lower" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/instructions"
+                    android:textStyle="bold"/>
 
-                        <TextView android:text="@string/units_lower" />
-
-                        <TextView android:text="@string/ingredient_lower" />
-
-                    </TableRow>
+                <TableLayout
+                    android:id="@+id/recipeViewStepsTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="2">
 
                 </TableLayout>
+
+                <LinearLayout
+                    android:id="@+id/recipeViewNewComment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/recipeViewNewCommentText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Enter your comment here..."/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/recipeViewNewCommentRating"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal"
+                            android:hint="Rate"/>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="submitComment"
+                            android:text="Submit" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/recipeViewCommentsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
 
     </ScrollView>
+
 </LinearLayout>
