@@ -25,10 +25,10 @@ public abstract class MenuActivity extends AppCompatActivity {
                 Intent myProfileIntent = new Intent(this, ProfileActivity.class);
                 startActivity(myProfileIntent);
                 return true;
-            case R.id.menuSearch:
-                Intent searchIntent = new Intent(this, SearchActivity.class);
-                startActivity(searchIntent);
-                return true;
+//            case R.id.menuSearch:
+//                Intent searchIntent = new Intent(this, SearchActivity.class);
+//                startActivity(searchIntent);
+//                return true;
             case R.id.menuLogout:
                 Intent logoutIntent = new Intent(this, LoginActivity.class);
                 logoutIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
