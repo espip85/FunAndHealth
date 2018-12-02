@@ -1,29 +1,34 @@
 package com.paulaespitia.recipenetwork;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ProfileActivity extends Activity {
+import com.paulaespitia.recipenetwork.model.User;
+
+public class ProfileActivity extends MenuActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        final ImageView picture = findViewById(R.id.profilePicture); //?????? how user updates picture
-        final TextView username = findViewById(R.id.profileUsername); //?? how do i get the username of the person logged in
-        final Button favorites = findViewById(R.id.profileFavorites);
-        final Button followers = findViewById(R.id.profileFollowers);
-        final Button following = findViewById(R.id.profileFollowing);
-        final Button myRecipes = findViewById(R.id.profileMyRecipes);
-        final Button myMessages = findViewById(R.id.profileMyMessages);
+        final TextView username = findViewById(R.id.profileUsername);
+        username.setText(User.currentUser.username);
+    }
 
+    public void openMyFavorites(View view) {
+        Intent myFavoritesIntent = new Intent(this, FavoritesRecipesActivity.class);
+        startActivity(myFavoritesIntent);
+    }
 
-
-
+    public void openMyRecipes(View view) {
+        Intent myRecipesIntent = new Intent(this, MyRecipesActivity.class);
+        startActivity(myRecipesIntent);
     }
 
 }

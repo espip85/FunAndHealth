@@ -6,10 +6,10 @@
         android:title="@string/my_profile"
         android:icon="@drawable/ic_person_black_24dp" />
 
-    <!--<item-->
-        <!--android:id="@+id/menuSearch"-->
-        <!--android:title="@string/search"-->
-        <!--android:icon="@drawable/ic_search_black_24dp" />-->
+    <item
+        android:id="@+id/menuSearch"
+        android:title="@string/search"
+        android:icon="@drawable/ic_search_black_24dp" />
 
     <!--<item-->
         <!--android:id="@+id/menuSettings"-->

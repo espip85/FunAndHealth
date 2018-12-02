@@ -5,40 +5,40 @@
     android:orientation="vertical">
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-
+        
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="40dp">
+            android:padding="10dp">
 
 
             <ImageView
-                android:id="@+id/profilePicture"
                 android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:gravity="center_horizontal"/>
+                android:layout_height="100dp" />
 
-            <TextView
-                android:id="@+id/profileUsername"
-                android:layout_width="match_parent"
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/username"
-                android:textSize="20dp"
-                android:layout_gravity="center_vertical"
-                android:gravity="center_horizontal"/>
+                android:layout_weight="1"
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/profileUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="User Name"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,40 +52,28 @@
             android:layout_height="wrap_content"
             android:text="Favorites"
             android:textAllCaps="false"
-            android:id="@+id/profileFavorites"
+            android:onClick="openMyFavorites"
             />
+        
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Followers"
+            android:text="My Recipes"
             android:textAllCaps="false"
-            android:id="@+id/profileFollowers"
+            android:onClick="openMyRecipes"
             />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Following"
-            android:textAllCaps="false"
-            android:id="@+id/profileFollowing"
-            />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="My recipes"
-            android:textAllCaps="false"
-            android:id="@+id/profileMyRecipes"
-            />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="My messages"
-            android:textAllCaps="false"
-            android:id="@+id/profileMyMessages"
-            />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="My messages"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:id="@+id/profileMyMessages"-->
+            <!--/>-->
 
     </LinearLayout>
 
