@@ -93,7 +93,7 @@ public class HomeActivity extends MenuActivity {
                 viewHighestRatedRecipe.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        RecipeDetailed.recipeToView = new RecipeDetailed(recipe);
+                        RecipeDetailed.recipeToView  = new RecipeDetailed(recipe);
                         Intent recipeViewIntent = new Intent(activity, RecipeActivity.class);
                         activity.startActivity(recipeViewIntent);
                     }

@@ -44,11 +44,18 @@
                 android:contentDescription="@string/recipe_picture" />
 
             <EditText
+                android:id="@+id/editorDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/description"
+                android:inputType="text" />
+
+            <EditText
                 android:id="@+id/editorEstimatedTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/estimated_time"
-                android:inputType="time" />
+                android:inputType="numberDecimal" />
 
 
             <TextView
@@ -163,7 +170,7 @@
 
                     <EditText
                         android:hint="@string/step_number_lower"
-                        android:inputType="numberDecimal" />
+                        android:inputType="number" />
 
                     <EditText
                         android:hint="@string/description_lower"
@@ -195,11 +202,12 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/addModifyUpload"
+        android:id="@+id/editorSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:onClick="saveRecipe"
         android:text="@string/save" />
 
 </RelativeLayout>
